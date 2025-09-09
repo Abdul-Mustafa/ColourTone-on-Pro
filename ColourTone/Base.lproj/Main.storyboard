@@ -152,6 +152,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="fzP-c2-1Lw" id="Vqo-sq-IrA"/>
+                        <outlet property="leadingOrTrailingOfImageview" destination="AGl-Je-Rez" id="llB-JM-zLx"/>
                         <outlet property="mainView" destination="FKR-k3-1Yh" id="xiz-Bm-O5o"/>
                     </connections>
                 </viewController>
