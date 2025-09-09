@@ -10,6 +10,7 @@ import UIKit
 
 class LaunchScreen: UIViewController {
     
+    @IBOutlet var mainView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -100,8 +101,22 @@ class LaunchScreen: UIViewController {
     }
     
     private func animationCompleted() {
-        print("Launch screen animation completed")
+       
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor(hex: "#BA43CE")!.cgColor, // light purple
+            UIColor(hex: "#A020F0")!.cgColor, // mid violet
+            UIColor(hex: "#6900FD")!.cgColor  // dark purple
+        ]
+        gradientLayer.locations = [0.0, 0.5, 1.0]
+                
+                // Gradient direction (top to bottom here)
+                gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0) // top
+                gradientLayer.endPoint   = CGPoint(x: 0.9, y: 1.0)
         
+        gradientLayer.frame = mainView.bounds
+        mainView.layer.insertSublayer(gradientLayer, at: 0)
+    
         // Optional: Navigate to main screen or perform other actions
         // For example:
         // self.performSegue(withIdentifier: "goToMainScreen", sender: self)
