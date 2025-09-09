@@ -137,7 +137,7 @@ class LaunchScreen: UIViewController {
             // Re-apply constraints programmatically
             imageView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                imageView.centerXAnchor.constraint(equalTo: label.leadingAnchor, constant: 5),
+                imageView.centerXAnchor.constraint(equalTo: label.leadingAnchor, constant: -10),
                 imageView.centerYAnchor.constraint(equalTo: label.centerYAnchor),
                 //imageView.widthAnchor.constraint(equalToConstant: 100), // Adjust size as needed
                // imageView.heightAnchor.constraint(equalToConstant: 100) // Adjust size as needed
@@ -145,7 +145,7 @@ class LaunchScreen: UIViewController {
        
             label.text = "Colourtone- Colorpalette"
             label.textColor = .white // Set text color to contrast with gradient background
-            label.font = UIFont.boldSystemFont(ofSize: 20) // Set font and size
+            label.font      = UIFont.systemFont(ofSize: 25, weight: .heavy) // Set font and size
             label.textAlignment = .center // Center-align text
             label.numberOfLines = 0 // Allow multiple lines for wrapping
             label.lineBreakMode = .byWordWrapping // Wrap text by words
