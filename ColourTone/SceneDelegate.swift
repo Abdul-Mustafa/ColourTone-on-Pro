@@ -20,11 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 windowScene.windows.forEach { $0.overrideUserInterfaceStyle = interfaceStyle }
         
         // Create the custom tab bar as root view controller
-        let customTabBar = CustomTabBarController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let launchVC = storyboard.instantiateViewController(withIdentifier: "LaunchScreen") as! LaunchScreen
     
         // Set your view controllers
-        customTabBar.setupDefaultViewControllers()
-        window?.rootViewController = customTabBar
+       // customTabBar.setupDefaultViewControllers()
+        window?.rootViewController = launchVC
             window?.makeKeyAndVisible()
         // Set as root view controller
       

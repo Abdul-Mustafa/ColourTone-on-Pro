@@ -72,7 +72,7 @@ class Home: UIViewController, UICollectionViewDelegate, UICollectionViewDataSour
             createPaletteVC.modalPresentationStyle = .fullScreen
             present(createPaletteVC, animated: true, completion: nil)
         case 3:
-            let createPaletteVC = storyboard?.instantiateViewController(withIdentifier: "LaunchScreen") as! LaunchScreen
+            let createPaletteVC = storyboard?.instantiateViewController(withIdentifier: "ProductTourVC") as! ProductTourVC
             createPaletteVC.modalPresentationStyle = .fullScreen
             present(createPaletteVC, animated: true, completion: nil)
         default:

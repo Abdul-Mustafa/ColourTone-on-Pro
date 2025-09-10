@@ -23,7 +23,7 @@ class LaunchScreen: UIViewController {
         setupImageView()
         
         // Add a small delay to ensure view is fully loaded
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.startAnimation()
         }
     }
@@ -65,7 +65,7 @@ class LaunchScreen: UIViewController {
     private func animateScaleUpAndClockwise() {
         print("Phase 1: Scale up and rotate clockwise")
         
-        UIView.animate(withDuration: 0.3,
+        UIView.animate(withDuration: 0.4,
                       delay: 0,
                       options: [.curveEaseInOut],
                       animations: {
@@ -174,6 +174,12 @@ class LaunchScreen: UIViewController {
             
             // Update the layout
             mainView.layoutIfNeeded()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // 2 sec delay
+              let customTabBarController = CustomTabBarController()
+              customTabBarController.setupDefaultViewControllers()
+              customTabBarController.modalPresentationStyle = .fullScreen
+              self.present(customTabBarController, animated: false, completion: nil)
+          }
     }
     
     // Optional: Method to manually stop the animation if needed
@@ -186,6 +192,8 @@ class LaunchScreen: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         stopAnimation()
+        
+        
     }
 }
 
