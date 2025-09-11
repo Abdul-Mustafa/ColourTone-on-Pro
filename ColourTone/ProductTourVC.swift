@@ -5,65 +5,85 @@
 //  Created by Bilal Apps Dev on 10/09/2025.
 //
 
+
+
 import UIKit
 
-class ProductTourVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ProductTourVC: UIViewController {
     
- 
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var belowTheTopLabel: UILabel!
     
+    @IBOutlet weak var firsView: UIView!
+    @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var thirdView: UIView!
     
+    @IBOutlet weak var nextButtonOutlet: UIButton!
     
+    @IBOutlet weak var pageControl: UIPageControl!
     
-    
-    
-    
-    @IBOutlet weak var dotsCollectionView: UICollectionView!
-    
-    let images = ["One", "Two", "Three"]
+    var currentPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        dotsCollectionView.dataSource = self
-        dotsCollectionView.delegate = self
         
-        // Do any additional setup after loading the view.
+        // Initial visibility
+        firsView.isHidden = false
+        secondView.isHidden = true
+        thirdView.isHidden = true
+        nextButtonOutlet.layer.cornerRadius = 20
+        nextButtonOutlet.layer.masksToBounds = true
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+    @IBAction func nextButtonAction(_ sender: Any) {
+        currentPage += 1
+        
+        if currentPage >= 3 {
+            let customTabBarController = CustomTabBarController()
+            customTabBarController.setupDefaultViewControllers()
+            customTabBarController.modalPresentationStyle = .fullScreen
+            self.present(customTabBarController, animated: false, completion: nil)
+        }
+        
+        // Update UI
+        pageControl.currentPage = currentPage
+        updateViews()
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      
-            
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DotsCVC", for: indexPath) as! DotsCVC
-            
-            cell.image.image = UIImage(named: "dot")
-            
-                return cell
-            
-        
-        
-        
-    }
- 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-       
-            let cellWidth = (collectionView.frame.width / 3 )  // Adjust spacing as needed
-            return CGSize(width: cellWidth - 10, height: cellWidth)
-        
+    @IBAction func skipButtonAction(_ sender: Any) {
+        let customTabBarController = CustomTabBarController()
+        customTabBarController.setupDefaultViewControllers()
+        customTabBarController.modalPresentationStyle = .fullScreen
+        self.present(customTabBarController, animated: false, completion: nil)
     }
     
-    
-    
+    private func updateViews() {
+        // Hide all first
+        firsView.isHidden = true
+        secondView.isHidden = true
+        thirdView.isHidden = true
+        
+        // Show current page
+        switch currentPage {
+        case 0:
+            firsView.isHidden = false
+        case 1:
+            secondView.isHidden = false
+            topLabel.text = "Explore beautiful palettes and gradients"
+            belowTheTopLabel.text = "Get inspired by popular color schemes curated for you."
+        case 2:
+            thirdView.isHidden = false
+            topLabel.text = "Use smart tools to perfect your colors"
+            belowTheTopLabel.text = "Contrast maker, export tools, and detailed palette analysis."
+            nextButtonOutlet.setTitle("Finish", for: .normal) // change button text on last page
+        default:
+            break
+        }
+    }
 }
 
-
-
 class RoundedView: UIView {
-    
+
     // Default radius
     var cornerRadius: CGFloat = 10 {
         didSet {
@@ -71,22 +91,22 @@ class RoundedView: UIView {
             self.layer.masksToBounds = true
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
     }
-    
+
     private func setup() {
         self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = cornerRadius
