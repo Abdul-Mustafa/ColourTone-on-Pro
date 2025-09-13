@@ -23,12 +23,13 @@ class ContrastMakerVC: UIViewController, UICollectionViewDelegate, UICollectionV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
         collectionViewInContrastMaker.delegate = self
         collectionViewInContrastMaker.dataSource = self
         contrastColorsCollectionView.delegate = self
         contrastColorsCollectionView.dataSource = self
         
-        UIDevice.current.userInterfaceIdiom == .pad ? (collectionViewInContrastMaker.layer.cornerRadius = 56) : (collectionViewInContrastMaker.layer.cornerRadius = 28) // for example
+        UIDevice.current.userInterfaceIdiom == .pad ? (collectionViewInContrastMaker.layer.cornerRadius = 46) : (collectionViewInContrastMaker.layer.cornerRadius = 28) // for example
       
         
         // Select first item by default
@@ -67,7 +68,11 @@ class ContrastMakerVC: UIViewController, UICollectionViewDelegate, UICollectionV
                     let isSelectedCell = collectionView.indexPathsForSelectedItems?.contains(indexPath) ?? false
                     let imageName = isSelectedCell ? selected[indexPath.item] : unselected[indexPath.item]
                     let image = UIImage(named: imageName)
-                    print("Loading image: \(imageName), Success: \(image != nil)")
+            cell.image.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                cell.image.widthAnchor.constraint(equalToConstant: UIDevice.current.userInterfaceIdiom == .pad ? 114 : 57),
+                cell.image.heightAnchor.constraint(equalToConstant: UIDevice.current.userInterfaceIdiom == .pad ? 114 : 57)
+            ])
                     cell.image.image = image
                     return cell
         }
@@ -130,12 +135,12 @@ class ContrastMakerVC: UIViewController, UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.collectionViewInContrastMaker {
-            let cellWidth = (collectionView.frame.width / 3.5)    // 4 cells per row
+            let cellWidth = (collectionView.frame.width / 4)    // 4 cells per row
             return CGSize(width: cellWidth, height: UIDevice.current.userInterfaceIdiom == .pad ? 114 : 57)
         }
         else {
             let cellWidth = (collectionView.frame.width / CGFloat(numberOfColors) )  // Adjust spacing as needed
-            return CGSize(width: cellWidth, height: UIDevice.current.userInterfaceIdiom == .pad ? 190 : 150)
+            return CGSize(width: cellWidth, height: UIDevice.current.userInterfaceIdiom == .pad ? 210 : 100)
         }
     }
 

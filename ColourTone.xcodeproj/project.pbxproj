@@ -27,7 +27,6 @@
 		CF248FD92E69BAAC0079E0EE /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248FD82E69BAAC0079E0EE /* Explore.swift */; };
 		CF248FDC2E6EB9020079E0EE /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248FDB2E6EB9020079E0EE /* LaunchScreen.swift */; };
 		CF248FDF2E71471D0079E0EE /* ProductTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248FDE2E71471D0079E0EE /* ProductTourVC.swift */; };
-		CF248FE42E715A280079E0EE /* DotsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248FE32E715A280079E0EE /* DotsCVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +52,6 @@
 		CF248FD82E69BAAC0079E0EE /* Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
 		CF248FDB2E6EB9020079E0EE /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		CF248FDE2E71471D0079E0EE /* ProductTourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTourVC.swift; sourceTree = "<group>"; };
-		CF248FE32E715A280079E0EE /* DotsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				CF248FDE2E71471D0079E0EE /* ProductTourVC.swift */,
-				CF248FE32E715A280079E0EE /* DotsCVC.swift */,
 			);
 			name = "Product Tour";
 			sourceTree = "<group>";
@@ -275,7 +272,6 @@
 				CF248FDC2E6EB9020079E0EE /* LaunchScreen.swift in Sources */,
 				CF248FD72E69BA390079E0EE /* SettingsCVC.swift in Sources */,
 				CF248FC52E69AE000079E0EE /* Home.swift in Sources */,
-				CF248FE42E715A280079E0EE /* DotsCVC.swift in Sources */,
 				CF248FC72E69AEC30079E0EE /* HomeCVC.swift in Sources */,
 				CF248FC32E69AC960079E0EE /* CustomTabBarController.swift in Sources */,
 				CF248FCD2E69B4600079E0EE /* ContrastColorsCVC.swift in Sources */,

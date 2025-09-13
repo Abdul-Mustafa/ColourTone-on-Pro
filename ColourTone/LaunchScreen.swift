@@ -137,7 +137,7 @@ class LaunchScreen: UIViewController {
             // Re-apply constraints programmatically
             imageView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                imageView.centerXAnchor.constraint(equalTo: label.leadingAnchor, constant: -10),
+                imageView.centerXAnchor.constraint(equalTo: label.leadingAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? 0 : -10),
                 imageView.centerYAnchor.constraint(equalTo: label.centerYAnchor),
                 //imageView.widthAnchor.constraint(equalToConstant: 100), // Adjust size as needed
                // imageView.heightAnchor.constraint(equalToConstant: 100) // Adjust size as needed
@@ -145,7 +145,7 @@ class LaunchScreen: UIViewController {
        
             label.text = "Colourtone- Colorpalette"
             label.textColor = .white // Set text color to contrast with gradient background
-            label.font      = UIFont.systemFont(ofSize: 25, weight: .heavy) // Set font and size
+        label.font      = UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 45 : 25, weight: .heavy) // Set font and size
             label.textAlignment = .center // Center-align text
             label.numberOfLines = 0 // Allow multiple lines for wrapping
             label.lineBreakMode = .byWordWrapping // Wrap text by words
@@ -159,7 +159,7 @@ class LaunchScreen: UIViewController {
                 // Position the label below the imageView
                 label.centerYAnchor.constraint(equalTo: mainView.centerYAnchor),
                 // Set fixed width
-                label.widthAnchor.constraint(equalToConstant: 200),
+                label.widthAnchor.constraint(equalToConstant: UIDevice.current.userInterfaceIdiom == .pad ? 400: 200),
                 // Set fixed height (optional, or let it adjust based on content)
               //  label.heightAnchor.constraint(greaterThanOrEqualToConstant: 50) // Minimum height
             ])
@@ -175,13 +175,76 @@ class LaunchScreen: UIViewController {
             // Update the layout
             mainView.layoutIfNeeded()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // 2 sec delay
-              let customTabBarController = CustomTabBarController()
-              customTabBarController.setupDefaultViewControllers()
-              customTabBarController.modalPresentationStyle = .fullScreen
-              self.present(customTabBarController, animated: false, completion: nil)
+//              let customTabBarController = CustomTabBarController()
+//              customTabBarController.setupDefaultViewControllers()
+//              customTabBarController.modalPresentationStyle = .fullScreen
+//              self.present(customTabBarController, animated: false, completion: nil)
+            self.checkAndPresentProductTour()
           }
     }
-    
+    // MARK: - Product Tour Methods
+    private func checkAndPresentProductTour() {
+        let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
+        print("Has launched before: \(hasLaunchedBefore)")
+        
+        if !hasLaunchedBefore {
+            print("First time user - showing product tour")
+            // First time user - show product tour
+            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+            UserDefaults.standard.synchronize()
+            print("First launch flag set to true")
+            
+            presentProductTour()
+        } else {
+            print("Returning user - going to main app")
+            // Returning user - go directly to main app
+            presentMainApp()
+        }
+    }
+    private func resetFirstLaunch() {
+        UserDefaults.standard.removeObject(forKey: "hasLaunchedBefore")
+        UserDefaults.standard.synchronize()
+        print("First launch flag reset - product tour will show next time")
+    }
+    private func presentProductTour() {
+        print("Attempting to present product tour...")
+        
+        // Create and present your product tour view controller
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let productTourVC = storyboard.instantiateViewController(withIdentifier: "ProductTourVC") as? ProductTourVC else {
+            print("ERROR: Could not instantiate ProductTourVC - check storyboard ID")
+            // Fallback to main app if product tour fails
+            presentMainApp()
+            return
+        }
+        
+        productTourVC.modalPresentationStyle = .fullScreen
+        
+        // Set up completion handler if your ProductTourVC supports it
+        // productTourVC.onTourCompleted = { [weak self] in
+        //     self?.presentMainApp()
+        // }
+        
+        print("Presenting ProductTourVC...")
+        present(productTourVC, animated: true) { [weak self] in
+            print("ProductTourVC presented successfully")
+            // If you don't have a completion handler in ProductTourVC,
+            // you might need to present main app here or handle it differently
+            
+            // TEMPORARY: Remove this after implementing proper completion handling
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                self?.presentMainApp()
+            }
+        }
+    }
+
+    private func presentMainApp() {
+        let customTabBarController = CustomTabBarController()
+        customTabBarController.setupDefaultViewControllers()
+        customTabBarController.modalPresentationStyle = .fullScreen
+        self.present(customTabBarController, animated: false, completion: nil)
+    }
     // Optional: Method to manually stop the animation if needed
     func stopAnimation() {
         imageView?.layer.removeAllAnimations()
