@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF00F72B2E758698002DEE71 /* ExploreCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00F72A2E758698002DEE71 /* ExploreCVC.swift */; };
+		CF00F72D2E75A1D6002DEE71 /* ColorPalletesColorsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00F72C2E75A1D6002DEE71 /* ColorPalletesColorsCVC.swift */; };
 		CF248FA42E6979050079E0EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248FA32E6979050079E0EE /* AppDelegate.swift */; };
 		CF248FA62E6979050079E0EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248FA52E6979050079E0EE /* SceneDelegate.swift */; };
 		CF248FAB2E6979050079E0EE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CF248FAA2E6979050079E0EE /* Base */; };
@@ -27,9 +29,12 @@
 		CF248FD92E69BAAC0079E0EE /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248FD82E69BAAC0079E0EE /* Explore.swift */; };
 		CF248FDC2E6EB9020079E0EE /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248FDB2E6EB9020079E0EE /* LaunchScreen.swift */; };
 		CF248FDF2E71471D0079E0EE /* ProductTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248FDE2E71471D0079E0EE /* ProductTourVC.swift */; };
+		CFA7458D2E7829090003EAA2 /* GradientCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7458C2E7829090003EAA2 /* GradientCVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF00F72A2E758698002DEE71 /* ExploreCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCVC.swift; sourceTree = "<group>"; };
+		CF00F72C2E75A1D6002DEE71 /* ColorPalletesColorsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalletesColorsCVC.swift; sourceTree = "<group>"; };
 		CF248FA02E6979050079E0EE /* ColourTone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColourTone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF248FA32E6979050079E0EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF248FA52E6979050079E0EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +57,7 @@
 		CF248FD82E69BAAC0079E0EE /* Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
 		CF248FDB2E6EB9020079E0EE /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		CF248FDE2E71471D0079E0EE /* ProductTourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTourVC.swift; sourceTree = "<group>"; };
+		CFA7458C2E7829090003EAA2 /* GradientCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +98,9 @@
 				CF248FBA2E69A8360079E0EE /* Home */,
 				CF248FA32E6979050079E0EE /* AppDelegate.swift */,
 				CF248FA52E6979050079E0EE /* SceneDelegate.swift */,
-				CF248FA92E6979050079E0EE /* Main.storyboard */,
-				CF248FAF2E6979060079E0EE /* Assets.xcassets */,
 				CF248FB12E6979060079E0EE /* LaunchScreen.storyboard */,
+				CF248FAF2E6979060079E0EE /* Assets.xcassets */,
+				CF248FA92E6979050079E0EE /* Main.storyboard */,
 				CF248FB42E6979060079E0EE /* Info.plist */,
 				CF248FAC2E6979050079E0EE /* ColourTone.xcdatamodeld */,
 			);
@@ -118,6 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				CF248FD82E69BAAC0079E0EE /* Explore.swift */,
+				CF00F72A2E758698002DEE71 /* ExploreCVC.swift */,
+				CF00F72C2E75A1D6002DEE71 /* ColorPalletesColorsCVC.swift */,
+				CFA7458C2E7829090003EAA2 /* GradientCVC.swift */,
 			);
 			name = Explore;
 			sourceTree = "<group>";
@@ -262,13 +271,16 @@
 			files = (
 				CF248FCF2E69B5670079E0EE /* CreatePalletesVC.swift in Sources */,
 				CF248FC92E69B0E70079E0EE /* ContrastMakerVC.swift in Sources */,
+				CF00F72B2E758698002DEE71 /* ExploreCVC.swift in Sources */,
 				CF248FD92E69BAAC0079E0EE /* Explore.swift in Sources */,
 				CF248FD52E69B9EA0079E0EE /* Settings.swift in Sources */,
 				CF248FAE2E6979050079E0EE /* ColourTone.xcdatamodeld in Sources */,
 				CF248FD32E69B69C0079E0EE /* UploadImageVC.swift in Sources */,
 				CF248FA42E6979050079E0EE /* AppDelegate.swift in Sources */,
+				CFA7458D2E7829090003EAA2 /* GradientCVC.swift in Sources */,
 				CF248FCB2E69B2AB0079E0EE /* ContrastMakerCVC.swift in Sources */,
 				CF248FDF2E71471D0079E0EE /* ProductTourVC.swift in Sources */,
+				CF00F72D2E75A1D6002DEE71 /* ColorPalletesColorsCVC.swift in Sources */,
 				CF248FDC2E6EB9020079E0EE /* LaunchScreen.swift in Sources */,
 				CF248FD72E69BA390079E0EE /* SettingsCVC.swift in Sources */,
 				CF248FC52E69AE000079E0EE /* Home.swift in Sources */,
