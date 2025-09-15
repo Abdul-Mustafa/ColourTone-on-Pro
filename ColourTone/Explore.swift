@@ -10,6 +10,7 @@ import UIKit
 class Explore: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   
     var selectedSegment = 0
+    @IBOutlet weak var createPalleteOrGradientBtnOutlet: UIButton!
     @IBOutlet weak var segmentControleOutlet: UISegmentedControl!
     
     @IBOutlet weak var exploreCollectionView: UICollectionView!
@@ -18,6 +19,9 @@ class Explore: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         exploreCollectionView.dataSource = self
         exploreCollectionView.delegate = self
         sementedControlSetup()
+        
+      
+                
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -73,6 +77,12 @@ class Explore: UIViewController, UICollectionViewDataSource, UICollectionViewDel
 
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
            selectedSegment = sender.selectedSegmentIndex
+        if selectedSegment == 1 {
+            createPalleteOrGradientBtnOutlet.setTitle("+ Create Gradient", for: .normal)
+        }
+        else {
+            createPalleteOrGradientBtnOutlet.setTitle("+ Create Palette", for: .normal)
+        }
         exploreCollectionView.reloadData()
        }
 }

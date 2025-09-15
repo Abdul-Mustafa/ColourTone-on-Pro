@@ -285,6 +285,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="createPalleteOrGradientBtnOutlet" destination="LbO-3y-2KZ" id="maZ-W5-U6N"/>
                         <outlet property="exploreCollectionView" destination="EgN-ZY-ehx" id="01F-tH-6QH"/>
                         <outlet property="segmentControleOutlet" destination="wDN-1I-Fsb" id="9DV-Rr-ued"/>
                     </connections>
