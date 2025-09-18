@@ -12,7 +12,7 @@ class CreatePalletesVC: UIViewController {
     
     @IBOutlet weak var mainContainer: UIView!
     
-    
+//    ColorPickerVC
     
     
     override func viewDidLoad() {
@@ -24,7 +24,16 @@ class CreatePalletesVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func createColorPalletesAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // 2. Instantiate the view controller with its Storyboard ID
+         let ColorPickerVC = storyboard.instantiateViewController(withIdentifier: "ColorPickerVC") as! ColorPickerVC
+         ColorPickerVC.modalPresentationStyle = .fullScreen
+         present(ColorPickerVC, animated: true, completion: nil)
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -36,6 +45,7 @@ class CreatePalletesVC: UIViewController {
     */
     @IBAction func backBtnAction(_ sender: Any) {
         self.dismiss(animated: true)
+        
     }
     
  

@@ -30,6 +30,11 @@
 		CF248FDC2E6EB9020079E0EE /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248FDB2E6EB9020079E0EE /* LaunchScreen.swift */; };
 		CF248FDF2E71471D0079E0EE /* ProductTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF248FDE2E71471D0079E0EE /* ProductTourVC.swift */; };
 		CFA7458D2E7829090003EAA2 /* GradientCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7458C2E7829090003EAA2 /* GradientCVC.swift */; };
+		CFA7458F2E7944EC0003EAA2 /* MyCreationsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7458E2E7944EC0003EAA2 /* MyCreationsCVC.swift */; };
+		CFA745912E7945620003EAA2 /* FilterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA745902E7945620003EAA2 /* FilterCVC.swift */; };
+		CFA745942E79782E0003EAA2 /* custom_classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA745932E79782E0003EAA2 /* custom_classes.swift */; };
+		CFA745972E7AE71A0003EAA2 /* ColorPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA745962E7AE71A0003EAA2 /* ColorPickerVC.swift */; };
+		CFA745992E7BE9D30003EAA2 /* ColorPickerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA745982E7BE9D30003EAA2 /* ColorPickerCVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,11 @@
 		CF248FDB2E6EB9020079E0EE /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		CF248FDE2E71471D0079E0EE /* ProductTourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTourVC.swift; sourceTree = "<group>"; };
 		CFA7458C2E7829090003EAA2 /* GradientCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientCVC.swift; sourceTree = "<group>"; };
+		CFA7458E2E7944EC0003EAA2 /* MyCreationsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCreationsCVC.swift; sourceTree = "<group>"; };
+		CFA745902E7945620003EAA2 /* FilterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCVC.swift; sourceTree = "<group>"; };
+		CFA745932E79782E0003EAA2 /* custom_classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custom_classes.swift; sourceTree = "<group>"; };
+		CFA745962E7AE71A0003EAA2 /* ColorPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerVC.swift; sourceTree = "<group>"; };
+		CFA745982E7BE9D30003EAA2 /* ColorPickerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,7 @@
 		CF248FA22E6979050079E0EE /* ColourTone */ = {
 			isa = PBXGroup;
 			children = (
+				CFA745922E7978070003EAA2 /* Custom Classes */,
 				CF248FDD2E71463C0079E0EE /* Product Tour */,
 				CF248FDA2E6EB8D00079E0EE /* Launch Screen */,
 				CF248FBD2E69A88D0079E0EE /* Tabbar */,
@@ -161,6 +172,7 @@
 		CF248FBF2E69AACE0079E0EE /* Create Palletes */ = {
 			isa = PBXGroup;
 			children = (
+				CFA745952E7AE6E40003EAA2 /* Color Picker */,
 				CF248FCE2E69B5670079E0EE /* CreatePalletesVC.swift */,
 			);
 			name = "Create Palletes";
@@ -170,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				CF248FD02E69B6310079E0EE /* MyCreationsVC.swift */,
+				CFA745902E7945620003EAA2 /* FilterCVC.swift */,
+				CFA7458E2E7944EC0003EAA2 /* MyCreationsCVC.swift */,
 			);
 			name = "My Creations";
 			sourceTree = "<group>";
@@ -196,6 +210,23 @@
 				CF248FDE2E71471D0079E0EE /* ProductTourVC.swift */,
 			);
 			name = "Product Tour";
+			sourceTree = "<group>";
+		};
+		CFA745922E7978070003EAA2 /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CFA745932E79782E0003EAA2 /* custom_classes.swift */,
+			);
+			name = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		CFA745952E7AE6E40003EAA2 /* Color Picker */ = {
+			isa = PBXGroup;
+			children = (
+				CFA745962E7AE71A0003EAA2 /* ColorPickerVC.swift */,
+				CFA745982E7BE9D30003EAA2 /* ColorPickerCVC.swift */,
+			);
+			name = "Color Picker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,10 +306,13 @@
 				CF248FD92E69BAAC0079E0EE /* Explore.swift in Sources */,
 				CF248FD52E69B9EA0079E0EE /* Settings.swift in Sources */,
 				CF248FAE2E6979050079E0EE /* ColourTone.xcdatamodeld in Sources */,
+				CFA745992E7BE9D30003EAA2 /* ColorPickerCVC.swift in Sources */,
 				CF248FD32E69B69C0079E0EE /* UploadImageVC.swift in Sources */,
 				CF248FA42E6979050079E0EE /* AppDelegate.swift in Sources */,
+				CFA7458F2E7944EC0003EAA2 /* MyCreationsCVC.swift in Sources */,
 				CFA7458D2E7829090003EAA2 /* GradientCVC.swift in Sources */,
 				CF248FCB2E69B2AB0079E0EE /* ContrastMakerCVC.swift in Sources */,
+				CFA745942E79782E0003EAA2 /* custom_classes.swift in Sources */,
 				CF248FDF2E71471D0079E0EE /* ProductTourVC.swift in Sources */,
 				CF00F72D2E75A1D6002DEE71 /* ColorPalletesColorsCVC.swift in Sources */,
 				CF248FDC2E6EB9020079E0EE /* LaunchScreen.swift in Sources */,
@@ -286,6 +320,8 @@
 				CF248FC52E69AE000079E0EE /* Home.swift in Sources */,
 				CF248FC72E69AEC30079E0EE /* HomeCVC.swift in Sources */,
 				CF248FC32E69AC960079E0EE /* CustomTabBarController.swift in Sources */,
+				CFA745912E7945620003EAA2 /* FilterCVC.swift in Sources */,
+				CFA745972E7AE71A0003EAA2 /* ColorPickerVC.swift in Sources */,
 				CF248FCD2E69B4600079E0EE /* ContrastColorsCVC.swift in Sources */,
 				CF248FD12E69B6310079E0EE /* MyCreationsVC.swift in Sources */,
 				CF248FA62E6979050079E0EE /* SceneDelegate.swift in Sources */,

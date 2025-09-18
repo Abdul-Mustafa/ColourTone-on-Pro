@@ -120,6 +120,7 @@ class ContrastMakerVC: UIViewController, UICollectionViewDelegate, UICollectionV
             if let cell = collectionView.cellForItem(at: indexPath) as? ContrastMakerCVC {
                 cell.image.image = UIImage(named: selected[indexPath.row])
             }
+            
             contrastColorsCollectionView.reloadData()
             
         }

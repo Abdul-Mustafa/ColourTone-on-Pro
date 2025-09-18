@@ -50,6 +50,7 @@ class Home: UIViewController, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     // MARK: - UICollectionViewDelegateFlowLayout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Set fixed width and height for each cell
         let width = collectionView.bounds.width
@@ -72,7 +73,7 @@ class Home: UIViewController, UICollectionViewDelegate, UICollectionViewDataSour
             createPaletteVC.modalPresentationStyle = .fullScreen
             present(createPaletteVC, animated: true, completion: nil)
         case 3:
-            let createPaletteVC = storyboard?.instantiateViewController(withIdentifier: "ProductTourVC") as! ProductTourVC
+            let createPaletteVC = storyboard?.instantiateViewController(withIdentifier: "MyCreationsVC") as! MyCreationsVC
             createPaletteVC.modalPresentationStyle = .fullScreen
             present(createPaletteVC, animated: true, completion: nil)
         default:
